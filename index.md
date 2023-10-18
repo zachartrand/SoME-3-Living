@@ -489,4 +489,8 @@ work for our calculations of radioactive decay, chemical reactions, and populati
 exercise, now I know, and if you made it this far, so do you! Thank you for joining me on this fun little
 math adventure. I hope you found this exercise as interesting and enlightening as I have.
 
-Did you enjoy this article?  Want to help me make more?  Consider making a [donation](https://www.buymeacoffee.com/zachartrand).
+### Support
+Did you enjoy this article?  Want to help me make more?  Consider making a 
+[donation](https://www.buymeacoffee.com/zachartrand).
+
+### Footnotes
