@@ -3,7 +3,8 @@ Summer of Math Exposition 3
 How does a computer/calculator compute logarithms?
 
 Author:  Zach Chartrand
-Created on 2 July 2023
+Entry created on 2 July 2023
+Living version created on 17 Oct 2023
 -->
 <head>
  <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
@@ -17,6 +18,9 @@ Created on 2 July 2023
  </script>
  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
+
+*Note: This is an updated version of the SoME 3 entry.  See the original 
+[here](https://zachartrand.github.io/SoME-3/).*
 
 # How does a computer/calculator compute logarithms?
 
@@ -75,9 +79,9 @@ terms get smaller in absolute value for each successive term, the sum approaches
 **converges**, to a value[^convergence].  The second series' terms get larger in absolute value
 with each successive term, so the series **diverges** without resolving to a defined value.
 
-[^convergence]: This is true for the geometric series, but not all infinite series. The harmonic
-series is a famous example of a series where the absolute value decreases with each successive term,
-but the series diverges to positive infinity.
+[^convergence]: This is true for geometric series, but not *all* infinite series. The harmonic
+    series is a famous example of a series where the absolute value decreases with each successive term,
+    but the series diverges to positive infinity.
 
 The general formula for a geometric series is
 
@@ -97,7 +101,7 @@ so if we were to expand out the terms in the parentheses, we get the same series
 in the first line; therefore, we can substitute the terms in the parentheses with $s$![^notfactorial]
 
 [^notfactorial]: While exclamation points are used in mathematics to denote factorials, factorials
-do not appear in this blog post. Exclamation points are just exclamation points.
+    do not appear in this blog post. Exclamation points are just exclamation points.
 
 $$ s = a + rs \nonumber $$
 
@@ -172,7 +176,7 @@ We'll start by setting the natural logarithm equal to the integral of our geomet
 
 $$
   \ln(1+x) = \int_{0}^{x} \frac{1}{1+t} dt = \int_{0}^{x} 
-  (1 - t + t^2 - t^3 + t^4 + \ldots + (-t)^n + \ldots) dt \nonumber
+  (1 - t + t^2 - t^3 + t^4 + \ldots + (-t)^n + \ldots) \space dt \nonumber
 $$
 
 The integral of a sum is the sum of the integrals of each term, so we can take this one term at a time.
@@ -303,7 +307,7 @@ Accepted value: 2.708050201102210
 
 So now we have a formula for finding the natural logarithm of any number to arbitrary precision
 based on the number of terms we use in the series. We did it! I even have a 
-[Python script](https://github.com/SoME-3-Living/blob/main/scripts/log.py)
+[Python script](https://github.com/zachartrand/SoME-3-Living/blob/main/scripts/log.py)
 that implements this formula to return the natural logarithm of any value within 64-bit floating-point
 precision using 48 terms.
 
@@ -391,7 +395,7 @@ addition, subtraction, and division.[^radiusofconvergence] Subtracting the logar
 Now we can take our two series and combine them in this manner:
 
 [^radiusofconvergence]: This also conveniently maps all of the positive reals to the domain $-1 < x < 1$, giving
-us an infinite radius of convergence, as we see in the graph.
+    us an infinite radius of convergence, as we see in the graph.
 
 $$
   \ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} 
@@ -421,8 +425,8 @@ $$ \ln \biggl( \frac{1+x}{1-x} \biggr) = \sum_{n=0}^{\infty} \frac{2}{2n+1}x^{2n
 Substituting our initial value, $u$, into the input, we get
 
 $$ 
-  \ln(u) & = & \sum_{n=0}^{\infty} \frac{2}{2n+1} {\biggl( \frac{u-1}{u+1} \biggr)}^{2n+1} \\
-  & = & 2{\biggl( \frac{u-1}{u+1} \biggr)} + \frac{2}{3} {\biggl( \frac{u-1}{u+1} \biggr)}^3 
+  \ln(u) = \sum_{n=0}^{\infty} \frac{2}{2n+1} {\biggl( \frac{u-1}{u+1} \biggr)}^{2n+1} \\
+  = 2{\biggl( \frac{u-1}{u+1} \biggr)} + \frac{2}{3} {\biggl( \frac{u-1}{u+1} \biggr)}^3 
   + \frac{2}{5} {\biggl( \frac{u-1}{u+1} \biggr)}^5 + \frac{2}{7} {\biggl( \frac{u-1}{u+1} \biggr)}^7 + \ldots 
 $$
 
@@ -436,7 +440,7 @@ The old series takes 36 terms to reach Desmos' calculator
 accuracy (11 decimal places), but the new series only takes 12! We reduced the number of terms we need
 by one third! And when you have the option to reduce the argument like we did with the example to find
 the natural log of 15, the number of terms reduces further. In my
-[Python script for the new series](https://github.com/SoME-3-Living/blob/main/scripts/log_fast.py), the code calculates the natural logarithm
+[Python script for the new series](https://github.com/zachartrand/SoME-3-Living/blob/main/scripts/log_fast.py), the code calculates the natural logarithm
 for any number with 15 terms, less than one third of the 48 terms needed for my script for the
 other series! This series is what is used in the
 [logarithm function used in the C library](https://github.com/freemint/fdlibm/blob/master/e_log.c),
