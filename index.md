@@ -433,16 +433,17 @@ $$
 We now have a series that increases by two degrees for each new term added! But how much quicker does
 this series converge compared to our old series? I have made a
 [Desmos graph](https://www.desmos.com/calculator/zr1vhmoign) where you can compare the two series.
-The series for $\ln(1+x)$ is in red and our new series is in green. Slide the value for $N$ to add terms
-to the series approximations, and note how they converge both by looking at the graph and by looking at
-the calculation for the natural log of 2. (Also, notice the difference in the radius of convergence.)
-The old series takes 36 terms to reach Desmos' calculator
+The first series for $\ln(1+x)$ (shifted right by 1) is in red and our new series is in green. 
+Slide the value for $N$ to add terms to the series approximations, and note how they converge 
+both by looking at the graph and by looking at the calculation for the natural log of 2. 
+(Also, notice the difference in the radius of convergence.) The old series takes 36 terms to reach Desmos' calculator
 accuracy (11 decimal places), but the new series only takes 12! We reduced the number of terms we need
 by one third! And when you have the option to reduce the argument like we did with the example to find
 the natural log of 15, the number of terms reduces further. In my
-[Python script for the new series](https://github.com/zachartrand/SoME-3-Living/blob/main/scripts/log_fast.py), the code calculates the natural logarithm
-for any number with 15 terms, less than one third of the 48 terms needed for my script for the
-other series! This series is what is used in the
+[Python script for the new series](https://github.com/zachartrand/SoME-3-Living/blob/main/scripts/log_fast.py),
+the code calculates the natural logarithm for any number with 15 terms, 
+less than one third of the 48 terms needed for my script for the other series!
+This series is what is used in the
 [logarithm function used in the C library](https://github.com/freemint/fdlibm/blob/master/e_log.c),
 which was made during a time where memory was much more limited, so optimization was much more
 necessary than it is today; it only uses 8 terms of the series after optimizing the argument
@@ -451,9 +452,11 @@ reduction algorithm to get an answer accurate to double floating-point precision
 <img src="./images/desmos-series-comparison.png" width="50%"
   title="Pictured: A comparison of the 3-term approximations for the two ln(x) series. Even after only three terms, the latter series is a much better approximation than the former.">
 
-*Pictured: A comparison of the 3-term approximations for the series $\sum_{n=0}^{\infty} (-1)^n \frac{(x-1)^{n+1}}{n+1}$ (red) and*
-*$\sum_{n=0}^{\infty} \frac{2}{2n+1} {\biggl( \frac{x-1}{x+1} \biggr)}^{2n+1}$ (green) to $\ln(x)$ (dotted black). Even after only three*
-*terms, the latter series is a much better approximation than the former.*
+*Pictured: A comparison of the 3-term approximations for the series*
+*$\sum_{n=0}^{\infty} (-1)^n \frac{(x-1)^{n+1}}{n+1}$ (red) and*
+*$\sum_{n=0}^{\infty} \frac{2}{2n+1} {\biggl( \frac{x-1}{x+1} \biggr)}^{2n+1}$* 
+*(green) to $\ln(x)$ (dotted black). Even after only three terms, the latter series*
+*is a much better approximation than the former.*
 
 But regardless of whichever series is used under the hood, you now understand how your computer
 and your calculator compute and give you an accurate value to the natural logarithm function. And
