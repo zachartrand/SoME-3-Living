@@ -128,10 +128,10 @@ Regarding the natural logarithm, the geometric series we are interested in is th
 and $r = -x$:
 
 $$
-  \begin{align*}
+  \begin{align}
     \frac{1}{1-(-x)} & = 1 + (-x) + (-x)^2 + (-x)^3 + \ldots + (-x)^n + \ldots \nonumber   \\
     \frac{1}{1+x}    & = 1 - x + x^2 - x^3 + x^4 + \ldots + (-x)^n + \ldots
-  \end{align*}
+  \end{align}
 $$
 
 This series converges when $|x| < 1$.  Now, you might think that some of the algebraic
@@ -179,8 +179,8 @@ We'll start by setting the natural logarithm equal to the integral of our geomet
 
 $$
   \begin{align*}
-    \ln(1+x) & = \int_{0}^{x} \frac{1}{1+t} dt \nonumber                                                  \\
-             & = \int_{0}^{x} (1 - t + t^2 - t^3 + t^4 + \ldots + (-t)^n + \ldots) \space dt \nonumber
+    \ln(1+x) & = \int_{0}^{x} \frac{1}{1+t} dt                                                   \\
+             & = \int_{0}^{x} (1 - t + t^2 - t^3 + t^4 + \ldots + (-t)^n + \ldots) \space dt 
   \end{align*}
 $$
 
@@ -189,11 +189,11 @@ Starting with the first term,
 
 $$
   \begin{align*}
-    \int_{0}^{x} 1 dt & = \int_{0}^{x} 1t^0 dt \nonumber             \\
-                      & = \frac{t^{0+1}}{0+1} \Big|_0^x \nonumber    \\
-                      & = \frac{t^1}{1} \Big|_0^x \nonumber          \\
-                      & = t \Big|_0^x \nonumber                      \\
-                      & = x - 0 = x \nonumber 
+    \int_{0}^{x} 1 dt & = \int_{0}^{x} 1t^0 dt              \\
+                      & = \frac{t^{0+1}}{0+1} \Big|_0^x     \\
+                      & = \frac{t^1}{1} \Big|_0^x           \\
+                      & = t \Big|_0^x                       \\
+                      & = x - 0 = x  
   \end{align*}
 $$
 
@@ -207,11 +207,11 @@ $\ln(1+x)$ is $x$!  Let's do the second term:
 
 $$
   \begin{align*}
-    \int_{0}^{x} -t dt & = \int_{0}^{x} -t^1 dt \nonumber                                         \\
-                       & = -\frac{t^{1+1}}{1+1} \Big|_0^x = -\frac{t^2}{2} \Big|_0^x \nonumber    \\
-                       & = -\frac{x^2}{2} - \biggl(-\frac{0^2}{2} \biggr) \nonumber               \\
-                       & = -\frac{x^2}{2} + 0 \nonumber                                           \\
-                       & = -\frac{x^2}{2} \nonumber
+    \int_{0}^{x} -t dt & = \int_{0}^{x} -t^1 dt                                          \\
+                       & = -\frac{t^{1+1}}{1+1} \Big|_0^x = -\frac{t^2}{2} \Big|_0^x     \\
+                       & = -\frac{x^2}{2} - \biggl(-\frac{0^2}{2} \biggr)                \\
+                       & = -\frac{x^2}{2} + 0                                            \\
+                       & = -\frac{x^2}{2}
   \end{align*}
 $$
 
@@ -219,10 +219,10 @@ Our second term is $-\frac{x^2}{2}$.  You may start to see the overall pattern, 
 
 $$
   \begin{align*}
-    \int_{0}^{x} t^2 dt & = \frac{t^{2+1}}{2+1} \Big|_0^x \nonumber    \\
-                        & = \frac{t^3}{3} \Big|_0^x \nonumber          \\
-                        & = \frac{x^3}{3} - \frac{0^3}{3} \nonumber    \\
-                        & = \frac{x^3}{3} \nonumber
+    \int_{0}^{x} t^2 dt & = \frac{t^{2+1}}{2+1} \Big|_0^x     \\
+                        & = \frac{t^3}{3} \Big|_0^x           \\
+                        & = \frac{x^3}{3} - \frac{0^3}{3}     \\
+                        & = \frac{x^3}{3}
   \end{align*}
 $$
 
@@ -231,21 +231,21 @@ divided by its degree, where all of the odd degree polynomial terms are positive
 terms are negative.  Written as a series,
 
 $$
-  \begin{align*}
+  \begin{align}
     \ln(1+x) & = \sum_{n=0}^{\infty} (-1)^n \frac{x^{n+1}}{n+1}                \\
              & = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \ldots
-  \end{align*}
+  \end{align}
 $$
 
 In fact, if we were to integrate the general term of the geometric series, this is exactly what we get:
 
 $$
   \begin{align*}
-    \int_0^x \frac{1}{1+t} dt & = \int_0^x \sum_{n=0}^{\infty} (-t)^n dt \nonumber                                     \\
-                              & = \sum_{n=0}^\infty \biggl( \int_0^x (-t)^n dt \biggr) \nonumber                       \\
-                              & = \sum_{n=0}^\infty \biggl( \int_0^x (-1)^n t^n dt \biggr) \nonumber                   \\
-                              & = \Biggl( \sum_{n=0}^\infty (-1)^n \frac{t^{n+1}}{n+1} \Biggr) \Bigg|_0^x \nonumber    \\
-                              & = \sum_{n=0}^{\infty} (-1)^n \frac{x^{n+1}}{n+1} \nonumber                             \\
+    \int_0^x \frac{1}{1+t} dt & = \int_0^x \sum_{n=0}^{\infty} (-t)^n dt                                         \\
+                              & = \sum_{n=0}^\infty \biggl( \int_0^x (-t)^n dt \biggr)                           \\
+                              & = \sum_{n=0}^\infty \biggl( \int_0^x (-1)^n t^n dt \biggr)                       \\
+                              & = \Biggl( \sum_{n=0}^\infty (-1)^n \frac{t^{n+1}}{n+1} \Biggr) \Bigg|_{t=0}^x    \\
+                              & = \sum_{n=0}^{\infty} (-1)^n \frac{x^{n+1}}{n+1}
   \end{align*}
 $$
 
@@ -301,12 +301,12 @@ we reduce 15 to 0.9375, so $0.9375 \cdot 2^4 = 15$. We can plug this value into 
 
 $$
   \begin{align*}
-    \ln(15) & = \ln(2^4 \cdot 0.9375)                                                                      \\
-            & = 4 \ln(2) + \ln(0.9375) \nonumber                                                           \\
-            & = 4 \ln(2) + \ln(1 + (0.9375 - 1))                                                           \\
-            & = 4 \ln(2) + \ln(1 + (-0.0625)) \nonumber                                                    \\
-            & = 4 \ln(2) + (-0.0625) - \frac{(-0.0625)^2}{2} + \frac{(-0.0625)^3}{3} + \ldots \nonumber    \\
-    \ln(15) & = 2.772588722239781... - 0.0625 - 0.001953125 - 0.000081380208333... + \ldots \nonumber
+    \ln(15) & = \ln(2^4 \cdot 0.9375)                                                             \\
+            & = 4 \ln(2) + \ln(0.9375)                                                            \\
+            & = 4 \ln(2) + \ln(1 + (0.9375 - 1))                                                  \\
+            & = 4 \ln(2) + \ln(1 + (-0.0625))                                                     \\
+            & = 4 \ln(2) + (-0.0625) - \frac{(-0.0625)^2}{2} + \frac{(-0.0625)^3}{3} + \ldots     \\
+            & = 2.772588722239781... - 0.0625 - 0.001953125 - 0.000081380208333... + \ldots
   \end{align*}
 $$
 
@@ -362,12 +362,12 @@ what would the series be for $\ln(1-x)$? We can rewrite $\ln(1-x)$ as $\ln(1 + (
 into our natural log series:
 
 $$
-  \begin{align*} 
+  \begin{align} 
     \ln(1-x) & = \ln(1 + (-x)) \nonumber                                                             \\
              & = (-x) - \frac{(-x)^2}{2} + \frac{(-x)^3}{3} - \frac{(-x)^4}{4} - \ldots \nonumber    \\
              & = -x - \frac{x^2}{2} - \frac{x^3}{3} - \frac{x^4}{4} + \ldots \nonumber               \\
     \ln(1-x) & = \sum_{n=0}^{\infty} -\frac{x^{n+1}}{n+1}
-  \end{align*}
+  \end{align}
 $$
 
 The difference between this series and our original series is that all the odd terms have become negative
@@ -376,8 +376,8 @@ expanded form with all the terms lined up:
 
 $$
   \begin{align*}
-    \ln(1+x) & = +x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} - \frac{x^6}{6} + \ldots \nonumber    \\
-    \ln(1-x) & = -x - \frac{x^2}{2} - \frac{x^3}{3} - \frac{x^4}{4} - \frac{x^5}{5} - \frac{x^6}{6} - \ldots \nonumber
+    \ln(1+x) & = +x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} - \frac{x^6}{6} + \ldots     \\
+    \ln(1-x) & = -x - \frac{x^2}{2} - \frac{x^3}{3} - \frac{x^4}{4} - \frac{x^5}{5} - \frac{x^6}{6} - \ldots
   \end{align*}
 $$
 
@@ -427,9 +427,9 @@ Now we can take our two series and combine them in this manner:
 $$
   \begin{align*}
     \ln(1+x) - \ln(1-x) =  & x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} 
-      + \frac{x^5}{5} - \frac{x^6}{6} + \ldots \nonumber    \\
+      + \frac{x^5}{5} - \frac{x^6}{6} + \ldots                                    \\
      - \space (- & x - \frac{x^2}{2} - \frac{x^3}{3} - \frac{x^4}{4} 
-      - \frac{x^5}{5} - \frac{x^6}{6} - \ldots) \nonumber
+      - \frac{x^5}{5} - \frac{x^6}{6} - \ldots)
   \end{align*}
 $$
 
@@ -438,28 +438,28 @@ Distributing the negative sign on the second series, we get
 $$
   \begin{align*}
     \ln(1+x) - \ln(1-x) = & x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} 
-      - \frac{x^6}{6} + \ldots \nonumber    \\
-    + \space & x + \frac{x^2}{2} + \frac{x^3}{3} + \frac{x^4}{4} + \frac{x^5}{5} + \frac{x^6}{6} + \ldots , \nonumber 
+      - \frac{x^6}{6} + \ldots    \\
+    + \space & x + \frac{x^2}{2} + \frac{x^3}{3} + \frac{x^4}{4} + \frac{x^5}{5} + \frac{x^6}{6} + \ldots ,
   \end{align*}
 $$
 
 and then combining them gives us
 
 $$
-  \begin{align*}
+  \begin{align}
     \ln \biggl( \frac{1+x}{1-x} \biggr) & = 2x + \frac{2}{3}x^3 + \frac{2}{5}x^5 + \frac{2}{7}x^7 + \ldots    \\
     & = \sum_{n=0}^{\infty} \frac{2}{2n+1}x^{2n+1} .
-  \end{align*}
+  \end{align}
 $$
 
 Substituting our initial value, $u$, into the input, we get
 
 $$
-  \begin{align*}
+  \begin{align}
   \ln(u) & = \sum_{n=0}^{\infty} \frac{2}{2n+1} {\biggl( \frac{u-1}{u+1} \biggr)}^{2n+1}    \\
          & = 2{\biggl( \frac{u-1}{u+1} \biggr)} + \frac{2}{3} {\biggl( \frac{u-1}{u+1} \biggr)}^3 
   + \frac{2}{5} {\biggl( \frac{u-1}{u+1} \biggr)}^5 + \frac{2}{7} {\biggl( \frac{u-1}{u+1} \biggr)}^7 + \ldots 
-  \end{align*}
+  \end{align}
 $$
 
 We now have a series that increases by two degrees for each new term added! But how much quicker does
