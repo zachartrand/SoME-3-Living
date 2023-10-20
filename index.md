@@ -128,10 +128,8 @@ Regarding the natural logarithm, the geometric series we are interested in is th
 and $r = -x$:
 
 $$
-  \begin{align}
-    \frac{1}{1-(-x)} & = 1 + (-x) + (-x)^2 + (-x)^3 + \ldots + (-x)^n + \ldots \nonumber   \\
-    \frac{1}{1+x}    & = 1 - x + x^2 - x^3 + x^4 + \ldots + (-x)^n + \ldots
-  \end{align}
+  \frac{1}{1-(-x)} = 1 + (-x) + (-x)^2 + (-x)^3 + \ldots + (-x)^n + \ldots \nonumber   \\
+  \frac{1}{1+x}    = 1 - x + x^2 - x^3 + x^4 + \ldots + (-x)^n + \ldots
 $$
 
 This series converges when $|x| < 1$.  Now, you might think that some of the algebraic
@@ -189,10 +187,10 @@ Starting with the first term,
 
 $$
   \begin{align*}
-    \int_{0}^{x} 1 dt & = \int_{0}^{x} 1t^0 dt              \\
-                      & = \frac{t^{0+1}}{0+1} \Big|_0^x     \\
-                      & = \frac{t^1}{1} \Big|_0^x           \\
-                      & = t \Big|_0^x                       \\
+    \int_{0}^{x} 1 dt & = \int_{0}^{x} 1t^0 dt                     \\
+                      & = \frac{t^{0+1}}{0+1} \Big|_{t=0}^{t=x}    \\
+                      & = \frac{t^1}{1} \Big|_{t=0}^{t=x}          \\
+                      & = t \Big|_{t=0}^{t=x}                      \\
                       & = x - 0 = x  
   \end{align*}
 $$
@@ -207,10 +205,10 @@ $\ln(1+x)$ is $x$!  Let's do the second term:
 
 $$
   \begin{align*}
-    \int_{0}^{x} -t dt & = \int_{0}^{x} -t^1 dt                                          \\
-                       & = -\frac{t^{1+1}}{1+1} \Big|_0^x = -\frac{t^2}{2} \Big|_0^x     \\
-                       & = -\frac{x^2}{2} - \biggl(-\frac{0^2}{2} \biggr)                \\
-                       & = -\frac{x^2}{2} + 0                                            \\
+    \int_{0}^{x} -t dt & = \int_{0}^{x} -t^1 dt                                                 \\
+                       & = -\frac{t^{1+1}}{1+1} \Big|_0^x = -\frac{t^2}{2} \Big|_{t=0}^{t=x}    \\
+                       & = -\frac{x^2}{2} - \biggl(-\frac{0^2}{2} \biggr)                       \\
+                       & = -\frac{x^2}{2} + 0                                                   \\
                        & = -\frac{x^2}{2}
   \end{align*}
 $$
@@ -219,9 +217,9 @@ Our second term is $-\frac{x^2}{2}$.  You may start to see the overall pattern, 
 
 $$
   \begin{align*}
-    \int_{0}^{x} t^2 dt & = \frac{t^{2+1}}{2+1} \Big|_0^x     \\
-                        & = \frac{t^3}{3} \Big|_0^x           \\
-                        & = \frac{x^3}{3} - \frac{0^3}{3}     \\
+    \int_{0}^{x} t^2 dt & = \frac{t^{2+1}}{2+1} \Big|_{t=0}^{t=x}    \\
+                        & = \frac{t^3}{3} \Big|_{t=0}^{t=x}          \\
+                        & = \frac{x^3}{3} - \frac{0^3}{3}            \\
                         & = \frac{x^3}{3}
   \end{align*}
 $$
@@ -233,7 +231,7 @@ terms are negative.  Written as a series,
 $$
   \begin{align}
     \ln(1+x) & = \sum_{n=0}^{\infty} (-1)^n \frac{x^{n+1}}{n+1}                \\
-             & = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \ldots
+    \ln(1+x) & = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \ldots
   \end{align}
 $$
 
@@ -241,10 +239,10 @@ In fact, if we were to integrate the general term of the geometric series, this 
 
 $$
   \begin{align*}
-    \int_0^x \frac{1}{1+t} dt & = \int_0^x \sum_{n=0}^{\infty} (-t)^n dt                                         \\
-                              & = \sum_{n=0}^\infty \biggl( \int_0^x (-t)^n dt \biggr)                           \\
-                              & = \sum_{n=0}^\infty \biggl( \int_0^x (-1)^n t^n dt \biggr)                       \\
-                              & = \Biggl( \sum_{n=0}^\infty (-1)^n \frac{t^{n+1}}{n+1} \Biggr) \Bigg|_{t=0}^x    \\
+    \int_0^x \frac{1}{1+t} dt & = \int_0^x \sum_{n=0}^{\infty} (-t)^n dt                                             \\
+                              & = \sum_{n=0}^\infty \biggl( \int_0^x (-t)^n dt \biggr)                               \\
+                              & = \sum_{n=0}^\infty \biggl( \int_0^x (-1)^n t^n dt \biggr)                           \\
+                              & = \Biggl( \sum_{n=0}^\infty (-1)^n \frac{t^{n+1}}{n+1} \Biggr) \Bigg|_{t=0}^{t=x}    \\
                               & = \sum_{n=0}^{\infty} (-1)^n \frac{x^{n+1}}{n+1}
   \end{align*}
 $$
@@ -421,12 +419,12 @@ our main input into the series input, while the subtraction of the logarithms on
 addition, subtraction, and division.[^radiusofconvergence] Subtracting the logarithms is the clear winner. 
 Now we can take our two series and combine them in this manner:
 
-[^radiusofconvergence]: This also conveniently maps all of the positive reals to the domain $-1 < x < 1$, giving
+[^radiusofconvergence]: This also conveniently maps all of the positive reals to the domain $x \in (-1, 1)$, giving
     us an infinite radius of convergence, as we see in the graph.
 
 $$
   \begin{align*}
-    \ln(1+x) - \ln(1-x) =  & x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} 
+    \ln(1+x) - \ln(1-x) = \space & x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} 
       + \frac{x^5}{5} - \frac{x^6}{6} + \ldots                                    \\
      - \space (- & x - \frac{x^2}{2} - \frac{x^3}{3} - \frac{x^4}{4} 
       - \frac{x^5}{5} - \frac{x^6}{6} - \ldots)
@@ -437,7 +435,7 @@ Distributing the negative sign on the second series, we get
 
 $$
   \begin{align*}
-    \ln(1+x) - \ln(1-x) = & x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} 
+    \ln(1+x) - \ln(1-x) = \space & x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} 
       - \frac{x^6}{6} + \ldots    \\
     + \space & x + \frac{x^2}{2} + \frac{x^3}{3} + \frac{x^4}{4} + \frac{x^5}{5} + \frac{x^6}{6} + \ldots ,
   \end{align*}
