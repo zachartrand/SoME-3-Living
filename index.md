@@ -163,7 +163,7 @@ with values of $x$ ($a$ in the graph) and see the area under the curve, with its
 value shown and a 1x1 square area shown as a comparison.
 
 <img src="./images/desmos-integral.png" width="50%"
-  title="Pictured: The integral of 1/(1+x) from 0 to e-1 (shaded in blue) and a square of Area = 1 (shaded in blue). Both shaded areas are equal in size.">
+  title="Pictured: The integral of 1/(1+x) from 0 to e-1 (shaded in blue) and a square of Area = 1 (shaded in green). Both shaded areas are equal in size.">
 
 *Pictured: The integral of $\frac{1}{1+x}$ from 0 to $e - 1$ (shaded in blue) and a square of Area = 1 (shaded in green).*
 *Both shaded areas are equal in size.*
