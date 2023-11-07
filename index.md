@@ -388,7 +388,10 @@ $$ \ln(1+x) + \ln(1-x) = \ln((1+x)(1-x)) = \ln(1-x^2) $$
 
 And if we subtract the two functions, we get
 
-$$ \ln(1+x) - \ln(1-x) = \ln \biggl( \frac{1+x}{1-x} \biggr) $$
+$$ \ln(1+x) - \ln(1-x) = \ln \biggl( \frac{1+x}{1-x} \biggr) $$[^artanh]
+
+[^artanh]: This happens to be the inverse hyperbolic tangent function ($\artanh(x)$ or $\tanh^{-1}(x)$) 
+    multiplied by 2.
 
 using the first property of logarithms. Let's remind ourselves that $x$ is the value we plug into the
 series. If we want the natural logarithm of some value—let's call it $u$—then we have to find the
