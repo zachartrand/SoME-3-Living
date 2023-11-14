@@ -396,7 +396,7 @@ value of $x$ to plug into our series that will get us the natural log of $u$. We
 setting $u$ equal to the input of each new, combined logarithm and solve for $x$. For the added
 logarithm, set $u$ equal to $1 - x^2$:
 
-[^artanh]: This happens to be the inverse hyperbolic tangent function ($\artanh(x)$ or $\tanh^{-1}(x)$) 
+[^artanh]: This happens to be the inverse hyperbolic tangent function ($\text{artanh}(x)$ or $\tanh^{-1}(x)$) 
     multiplied by 2.
 
 $$
